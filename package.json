@@ -1,0 +1,35 @@
+{
+  "name": "QuackAcademy_CS_Simulator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andremichalowski/QuackAcademy_CS_Simulator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andremichalowski/QuackAcademy_CS_Simulator/issues"
+  },
+  "homepage": "https://github.com/andremichalowski/QuackAcademy_CS_Simulator#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.95.7",
+    "shortid": "^2.2.16",
+    "sqlite3": "^5.0.2"
+  }
+}
