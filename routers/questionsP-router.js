@@ -4,6 +4,8 @@ const questionsProuter = express.Router();
 
 
 questionsProuter.get("/", (req, res) => {
+  console.log(questionsProuter, 'Somethings wrong before .then')
+
   Items.getAll()
     .then((questions) => {
       res.json(questions);

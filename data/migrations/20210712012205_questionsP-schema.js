@@ -1,14 +1,14 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('questionsp', tbl => {
     tbl.increments(); 
-    tbl.string('Name').notNullable();
-    tbl.string('Question').notNullable();
-    tbl.string('Input').notNullable();
-    tbl.string('Option 1').notNullable();
-    tbl.string('Option 2').notNullable();
-    tbl.string('Option 3').notNullable();
-    tbl.string('Option 4').notNullable();
-    tbl.string('Answer').notNullable();
+    tbl.string('name').notNullable();
+    tbl.string('question').notNullable();
+    tbl.string('input').notNullable();
+    tbl.string('one').notNullable();
+    tbl.string('two').notNullable();
+    tbl.string('three').notNullable();
+    tbl.string('four').notNullable();
+    tbl.string('answer').notNullable();
     
 
 		// tbl.foreign('user_id').references('Items.user_id_in_items')

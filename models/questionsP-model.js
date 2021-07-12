@@ -10,15 +10,15 @@ module.exports = {
 };
 
 function getAll() {
-    return db("questions");
+    return db("questionsP");
 }
 
 function getById(id) {
-    return db("questions").where({ id }).first();
+    return db("questionsP").where({ id }).first();
 }
 
 function add(user) {
-    return db("questions")
+    return db("questionsP")
         .insert(question, "id")
         .then(ids => {
             const id = ids[0];
@@ -27,13 +27,13 @@ function add(user) {
 }
 
 function update(id, changes) {
-    return db("questions").where({ id }).update(changes);
+    return db("questionsP").where({ id }).update(changes);
 }
 
 function remove(id) {
-    return db("questions").where({ id }).del();
+    return db("questionsP").where({ id }).del();
 }
 
 function getUserPosts(id) {
-    return db("questions").where("question_id", id);
+    return db("questionsP").where("question_id", id);
 }
