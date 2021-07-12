@@ -1,10 +1,10 @@
 const express = require("express"); 
-const questionsRouter = require('../routers/questions-router.js');
+const questionsProuter = require('../routers/questionsP-router.js');
 
 const server = express();
 server.use(express.json());
 
-server.use('/api/questions/', questionsRouter);
+server.use('/api/questionsP/', questionsProuter);
 
 
 server.get('/', (req, res) => {

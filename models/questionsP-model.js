@@ -1,10 +1,8 @@
-const db = require('../../data/dbConfig');
-
-
+const db = require('../data/db-config.js');
 
 module.exports = {
     getAll,
-		getById,
+	getById,
     add,
     update,
     remove,

@@ -1,9 +1,9 @@
-const express = require('express') 
-//import modal or db here
-const questionsRouter = express.Router();
+const express = require('express');
+const Items = require('../models/questionsP-model.js');
+const questionsProuter = express.Router();
 
 
-questionsRouter.get("/", (req, res) => {
+questionsProuter.get("/", (req, res) => {
   Items.getAll()
     .then((questions) => {
       res.json(questions);
@@ -13,7 +13,7 @@ questionsRouter.get("/", (req, res) => {
     });
 });
 
-questionsRouter.get("/:id", (req, res) => {
+questionsProuter.get("/:id", (req, res) => {
   const { id } = req.params;
 
   Items.getById(id)
@@ -29,7 +29,7 @@ questionsRouter.get("/:id", (req, res) => {
     });
 });
 
-questionsRouter.post("/", (req, res) => {
+questionsProuter.post("/", (req, res) => {
   const questionData = req.body;
 
   Items.add(questionData)
@@ -41,7 +41,7 @@ questionsRouter.post("/", (req, res) => {
     });
 });
 
-questionsRouter.put("/:id", (req, res) => {
+questionsProuter.put("/:id", (req, res) => {
   const { id } = req.params;
   const changes = req.body;
 
@@ -58,7 +58,7 @@ questionsRouter.put("/:id", (req, res) => {
     });
 });
 
-questionsRouter.delete("/:id", (req, res) => {
+questionsProuter.delete("/:id", (req, res) => {
   const { id } = req.params;
 
   Questions.remove(id)
@@ -74,7 +74,7 @@ questionsRouter.delete("/:id", (req, res) => {
     });
 });
 
-// questionsRouter.get("/:id/secondaries", (req, res) => {
+// questionsProuter.get("/:id/secondaries", (req, res) => {
 //   Questions.getQuestionSecondaries(req.params.id)
 //     .then((secondaries) => {
 //       res.status(200).json({ data: secondaries });
@@ -85,4 +85,4 @@ questionsRouter.delete("/:id", (req, res) => {
 // });
 
 
-module.exports = questionsRouter;
+module.exports = questionsProuter;
