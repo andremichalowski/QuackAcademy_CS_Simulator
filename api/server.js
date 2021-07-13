@@ -4,7 +4,7 @@ const questionsProuter = require('../routers/questionsP-router.js');
 const server = express();
 server.use(express.json());
 
-server.use('/api/questionsP/', questionsProuter);
+server.use('/api/questionsP', questionsProuter);
 
 
 server.get('/', (req, res) => {
