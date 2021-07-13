@@ -4,8 +4,6 @@ const questionsProuter = express.Router();
 
 
 questionsProuter.get("/", (req, res) => {
-  console.log(questionsProuter, 'Somethings wrong before .then')
-
   Items.getAll()
     .then((questions) => {
       res.json(questions);
@@ -32,9 +30,8 @@ questionsProuter.get("/:id", (req, res) => {
 });
 
 questionsProuter.post("/", (req, res) => {
-  const questionData = req.body;
-
-  Items.add(questionData)
+  const question = req.body;
+  Items.add(question)
     .then((question) => {
       res.status(201).json({ created: question });
     })
@@ -47,7 +44,7 @@ questionsProuter.put("/:id", (req, res) => {
   const { id } = req.params;
   const changes = req.body;
 
-  Questions.update(id, changes)
+  Items.update(id, changes)
     .then((question) => {
       if (question) {
         res.json({ updated: question });
@@ -63,7 +60,7 @@ questionsProuter.put("/:id", (req, res) => {
 questionsProuter.delete("/:id", (req, res) => {
   const { id } = req.params;
 
-  Questions.remove(id)
+  Items.remove(id)
     .then((question) => {
       if (question) {
         res.json({ removed: question });
@@ -77,7 +74,7 @@ questionsProuter.delete("/:id", (req, res) => {
 });
 
 // questionsProuter.get("/:id/secondaries", (req, res) => {
-//   Questions.getQuestionSecondaries(req.params.id)
+//   Items.getQuestionSecondaries(req.params.id)
 //     .then((secondaries) => {
 //       res.status(200).json({ data: secondaries });
 //     })

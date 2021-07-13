@@ -17,9 +17,8 @@ function getById(id) {
     return db("questionsP").where({ id }).first();
 }
 
-function add(user) {
-    return db("questionsP")
-        .insert(question, "id")
+function add(question) {
+    return db("questionsP").insert(question, "id")
         .then(ids => {
             const id = ids[0];
             return getById(id);
