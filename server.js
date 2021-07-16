@@ -1,5 +1,5 @@
 const express = require("express"); 
-const questionsProuter = require('../routers/questionsP-router.js');
+const questionsProuter = require('./routers/questionsP-router.js');
 
 //path
 const path = require('path')
