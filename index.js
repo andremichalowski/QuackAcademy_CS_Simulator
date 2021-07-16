@@ -1,5 +1,5 @@
 require("dotenv").config();
-const server = require('./server.js');
+const server = require('./api/server.js');
 
 const PORT = process.env.PORT || 3000;
 // const secret = process.env.TEMP_SECRET || 'FOO SECRET'
