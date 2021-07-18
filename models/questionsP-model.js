@@ -18,7 +18,7 @@ function getById(id) {
 }
 
 function add(question) {
-    return db("questionsP").insert(question, "id")
+    return db("questionsP").insert(question, 'id')
         .then(ids => {
             const id = ids[0];
             return getById(id);
