@@ -13,4 +13,4 @@ const knexfile = require('../knexfile.js');
 const dbEnv = process.env.DB_ENV || 'development'; 
 const config = knexfile[dbEnv]
 
-module.exports = knex(config[dbEnv])
+module.exports = knex(config)

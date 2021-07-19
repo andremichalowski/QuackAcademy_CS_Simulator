@@ -9,10 +9,6 @@ exports.up = function(knex, Promise) {
     tbl.string('three').notNullable();
     tbl.string('four').notNullable();
     tbl.string('answer').notNullable();
-    
-		// tbl.foreign('user_id').references('Items.user_id_in_items')
-		// 	.onUpdate('CASCADE')
-		// 	.onDelete('CASCADE')
   });
 };
 

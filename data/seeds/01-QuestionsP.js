@@ -1,4 +1,4 @@
-// SQL
+// SQLite3 / Development
 // exports.seed = function(knex) {
 //   // Deletes ALL existing entries
 //   return knex('questionsP').del()
