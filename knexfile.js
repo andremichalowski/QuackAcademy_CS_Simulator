@@ -3,8 +3,7 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      connectionString:pgConnection,
-      ssl: { rejectUnauthorized: false }
+      filename: './data/questionsP.db3'
     },
     useNullAsDefault: true,
     migrations: {
@@ -17,7 +16,10 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL,
+    connection: {
+      connectionString:pgConnection,
+      ssl: { rejectUnauthorized: false }
+    },
     migrations: {
       directory: "./data/migrations"
     },
@@ -27,5 +29,3 @@ module.exports = {
   },
 
 };
-
-// Steps to return to later related to production vs. dev process:
