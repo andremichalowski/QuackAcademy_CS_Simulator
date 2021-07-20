@@ -31,4 +31,5 @@ module.exports = {
 };
 
 //Steps to review/add later for prod steps:
-// 1. Knex file production update
+// 1. Knex file: production update
+// 2. db-config.js: 'DB_ENV'
