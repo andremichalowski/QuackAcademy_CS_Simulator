@@ -16,7 +16,7 @@ questionsProuter.get("/", (req, res) => {
 questionsProuter.get("/:id", (req, res) => {
   const { id } = req.params;
 
-  Items.getById(id)
+  Items.findById(id)
     .then((question) => {
       if (question) {
         res.json(question);
@@ -72,16 +72,6 @@ questionsProuter.delete("/:id", (req, res) => {
       res.status(500).json({ message: "Failed to delete question" });
     });
 });
-
-// questionsProuter.get("/:id/secondaries", (req, res) => {
-//   Items.getQuestionSecondaries(req.params.id)
-//     .then((secondaries) => {
-//       res.status(200).json({ data: secondaries });
-//     })
-//     .catch((err) => {
-//       res.status(500).json({ message: err.message });
-//     });
-// });
 
 
 module.exports = questionsProuter;
