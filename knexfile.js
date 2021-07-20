@@ -20,6 +20,8 @@ module.exports = {
       connectionString:pgConnection,
       ssl: { rejectUnauthorized: false }
     },
+    pool: {
+    },
     migrations: {
       directory: "./data/migrations"
     },
