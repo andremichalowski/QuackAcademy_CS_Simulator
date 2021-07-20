@@ -2,7 +2,7 @@ const db = require('../data/db-config.js');
 
 module.exports = {
     getAll,
-	getById,
+	findById,
     add,
     update,
     remove,
@@ -13,7 +13,7 @@ function getAll() {
     return db("questionsP");
 }
 
-function getById(id) {
+function findById(id) {
     return db("questionsP").where({ id }).first();
 }
 
