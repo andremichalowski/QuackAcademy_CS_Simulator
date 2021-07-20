@@ -31,7 +31,3 @@ function update(id, changes) {
 function remove(id) {
     return db("questionsP").where({ id }).del();
 }
-
-function getUserPosts(id) {
-    return db("questionsP").where("question_id", id);
-}
