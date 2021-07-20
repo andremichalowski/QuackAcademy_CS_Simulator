@@ -16,7 +16,10 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL,
+    connection: {
+      connectionString:pgConnection,
+      ssl: { rejectUnauthorized: false }
+    },
     migrations: {
       directory: "./data/migrations"
     },
@@ -26,3 +29,8 @@ module.exports = {
   },
 
 };
+
+//Steps to review/add later for prod steps:
+// 1. Knex file: production update
+// 2. db-config.js: 'DB_ENV'
+// 3. seeds: (Remove export part of statement (only return statement))
