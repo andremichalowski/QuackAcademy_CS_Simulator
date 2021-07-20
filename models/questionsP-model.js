@@ -18,11 +18,10 @@ function getById(id) {
 }
 
 function add(question) {
-    return db("questionsP").insert(question, 'id')
-        .then(ids => {
-            const id = ids[0];
-            return getById(id);
-        });
+    return db("questionsP")
+        .insert(question)
+        .returning('id')
+        .then(ids => getById(ids[0]))
 }
 
 function update(id, changes) {
