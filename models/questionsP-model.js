@@ -21,7 +21,7 @@ function add(question) {
     return db("questionsP")
         .insert(question)
         .returning('id')
-        .then(ids => getById(ids[0]))
+        .then(ids => findById(ids[0]))
 }
 
 function update(id, changes) {
