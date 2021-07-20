@@ -73,15 +73,5 @@ questionsProuter.delete("/:id", (req, res) => {
     });
 });
 
-// questionsProuter.get("/:id/secondaries", (req, res) => {
-//   Items.getQuestionSecondaries(req.params.id)
-//     .then((secondaries) => {
-//       res.status(200).json({ data: secondaries });
-//     })
-//     .catch((err) => {
-//       res.status(500).json({ message: err.message });
-//     });
-// });
-
 
 module.exports = questionsProuter;
